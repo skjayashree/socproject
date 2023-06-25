@@ -10,6 +10,9 @@ file = h5py.File('points2D_Set2.mat')
 X = np.array(file['x'])
 Y = np.array(file['y'])
 
+X = X.ravel()
+Y = Y.ravel()
+
 # Scatter plot of the points
 plt.scatter(X, Y)
 
@@ -20,5 +23,5 @@ line = np.polyval(coefficients, X)
 # Overlay the line on the scatter plot
 plt.plot(X, line, color='red')
 
-# Display the plot
+# Display the plot
 plt.show()
